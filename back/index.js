@@ -8,10 +8,10 @@ app.use(express.json());
 
 // Configuração da conexão com o banco MySQL
 const db = mysql.createPool({
-  host: 'localhost',       
-  user: 'root',     
-  password: '',   
-  database: 'dragoncity'  
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'dragoncity'
 });
 
 // Rota para cadastrar dragão
@@ -41,6 +41,28 @@ app.get('/dragoes', (req, res) => {
       return res.status(500).json({ error: 'Erro ao buscar dragões.' });
     }
     res.json(results);
+  });
+});
+
+// Rota para atualizar o nível de um dragão
+app.put('/dragao/:id', (req, res) => {
+  const { id } = req.params;
+  const nivel = Number(req.body.nivel);
+
+  if (nivel === undefined || isNaN(nivel) || nivel < 1) {
+    return res.status(400).json({ error: 'Nível inválido.' });
+  }
+
+  const sql = 'UPDATE dragoes SET nivel = ? WHERE id = ?';
+  db.query(sql, [nivel, id], (err, result) => {
+    if (err) {
+      console.error('Erro ao atualizar nível:', err.sqlMessage || err);
+      return res.status(500).json({ error: 'Erro ao atualizar nível.' });
+    }
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'Dragão não encontrado.' });
+    }
+    res.json({ message: 'Nível atualizado com sucesso.' });
   });
 });
 

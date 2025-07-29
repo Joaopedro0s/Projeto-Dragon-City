@@ -75,6 +75,65 @@ body {
   color: #ddd;
 }
 
+/* Container do nível */
+.nivel-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+  font-size: 15px;
+  color: #ddd;
+  position: relative;
+}
+
+/* Texto do nível */
+.nivel-text {
+  color: #ddd;
+}
+
+/* Ícone lápis */
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  fill: #ffcc00;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+
+.edit-icon:hover {
+  fill: #ff6600;
+}
+
+/* Input nível */
+.nivel-input {
+  width: 60px;
+  padding: 4px 8px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 2px solid #ff6600;
+  background-color: #1a1a2e;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* Botão salvar */
+.save-btn {
+  background-color: #ff3300;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.2s;
+  font-size: 14px;
+}
+
+.save-btn:hover {
+  background-color: #cc2900;
+}
+
 @media (max-width: 600px) {
   .cards-container {
     grid-template-columns: 1fr;
