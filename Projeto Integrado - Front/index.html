@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dragon City - Central Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1 class="glow-text">🐉 Central de Dragões</h1>
+    <input type="text" id="search" placeholder="🔍 Pesquisar Dragão..." />
+  </header>
+
+  <nav id="controls" class="controls">
+    <select id="element-filter">
+      <option value="all">Todos os Elementos</option>
+      <option value="terra">🟤Terra</option>
+      <option value="fire">🔥 Fogo</option>
+      <option value="água">💧 Água</option>
+      <option value="nature">🌿 Natureza</option>
+      <option value="electric">⚡ Elétrico</option>
+      <option value="ice">❄️ Gelo</option>
+      <option value="metal">🛡️ Metal</option>
+      <option value="sombra">🌑 Sombra</option>
+      <option value="luz">🌟 Luz</option>
+      <option value="guerra">⚔️ Guerra</option>
+      <option value="puro">🌀 Puro</option>
+      <option value="lendario">🐲 Lendário</option>
+      <option value="divino">✨ Divino</option>
+      <option value="primal">🧬 Primal</option>
+      <option value="caos">☣️ Caos</option>
+      <option value="magia">🔮 Magia</option>
+      <option value="tempo">⏳ Tempo</option>
+      <option value="maravilha">🌌 Maravilha</option>
+    </select>
+
+    <select id="sort-level">
+      <option value="none">Ordenar por Nível</option>
+      <option value="asc">⬆️ Crescente</option>
+      <option value="desc">⬇️ Decrescente</option>
+    </select>
+  </nav>
+
+  <main>
+    <section id="stats">
+      <h2>📊 Estatísticas</h2>
+      <p>Total de Dragões: <span id="total-dragons">0</span></p>
+      <p>Nível Médio: <span id="average-level">0</span></p>
+    </section>
+
+    <section id="dragon-list"></section>
+  </main>
+
+  <footer>
+    <p>Projeto Dragon City Web © 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

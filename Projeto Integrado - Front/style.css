@@ -1,0 +1,242 @@
+
+
+:root {
+    --bg: #050505;
+    --card: rgba(10, 10, 30, 0.95);
+    --accent: #ffde59;
+    --text: #eaffea;
+    --terra: #a58c64;
+    --fire: #ff3c00;
+    --ice: #00e0ff;
+    --electric: #f7ff00;
+    --nature: #00ff99;
+    --metal: #bfbfbf;
+    --água: #0077ff;
+    --sombra: #2f2f3b;
+    --luz: #fffacd;
+    --guerra: #c1121f;
+    --puro: #5f4b8b;
+    --lendario: #ff00ff;
+    --divino: #ffb6c1;
+    --primal: #8f00ff;
+    --caos: #a00000;
+    --magia: #6a0dad;
+    --tempo: #00ced1;
+    --maravilha: #c0c0ff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+  }
+  
+  html, body {
+    min-height: 100vh;
+    background-image: url('fundo-dragoncity.png.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text);
+    scroll-behavior: smooth;
+    transition: background 0.5s ease;
+  }
+  
+  header, nav, footer {
+    animation: fadeIn 1s ease forwards;
+    backdrop-filter: blur(4px);
+    padding: 1rem;
+  }
+  
+  .glow-text {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--accent), 0 0 24px var(--accent);
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  input,
+  select,
+  button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin: 8px;
+    font-size: 1rem;
+    background-color: #1d1d2b;
+    color: var(--text);
+    border: 1px solid var(--accent);
+    width: 100%;
+    max-width: 400px;
+    transition: box-shadow 0.3s, background-color 0.3s;
+  }
+  
+  input:focus,
+  select:focus,
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--accent);
+    background-color: #2a2a3d;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  #stats {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px var(--accent);
+    text-align: center;
+    animation: fadeIn 1s ease;
+  }
+  
+  #dragon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    animation: fadeIn 1s ease;
+    padding: 1rem;
+  }
+  
+  .dragon-card {
+    background-color: rgba(20, 20, 40, 0.9);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    animation: zoomIn 0.8s ease;
+  }
+  
+  .dragon-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--accent);
+  }
+  
+  .dragon-card h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px var(--accent);
+  }
+  
+  .dragon-card p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    animation: fadeIn 1.2s ease;
+  }
+  
+  .dragon-card img {
+    width: 100%;
+    max-width: 140px;
+    border-radius: 10px;
+    margin-top: 10px;
+    filter: drop-shadow(0 0 5px white);
+    transition: transform 0.3s;
+  }
+  
+  .dragon-card:hover img {
+    transform: scale(1.1);
+  }
+  
+  
+  .dragon-card::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.7;
+    transition: background 0.3s ease;
+  }
+  
+  .dragon-card.terra::before { background: radial-gradient(circle, var(--terra) 0%, transparent 70%); }
+  .dragon-card.fire::before { background: radial-gradient(circle, var(--fire) 0%, transparent 70%); animation: flicker 1s infinite alternate; }
+  .dragon-card.ice::before { background: radial-gradient(circle, var(--ice) 0%, transparent 70%); animation: pulse 2s infinite; }
+  .dragon-card.electric::before { background: radial-gradient(circle, var(--electric) 0%, transparent 70%); animation: blink 0.6s infinite; }
+  .dragon-card.nature::before { background: radial-gradient(circle, var(--nature) 0%, transparent 70%); animation: grow 2.5s infinite alternate; }
+  .dragon-card.metal::before { background: radial-gradient(circle, var(--metal) 0%, transparent 70%); }
+  .dragon-card.água::before { background: radial-gradient(circle, var(--água) 0%, transparent 70%); }
+  .dragon-card.sombra::before { background: radial-gradient(circle, var(--sombra) 0%, transparent 70%); }
+  .dragon-card.luz::before { background: radial-gradient(circle, var(--luz) 0%, transparent 70%); }
+  .dragon-card.guerra::before { background: radial-gradient(circle, var(--guerra) 0%, transparent 70%); }
+  .dragon-card.puro::before { background: radial-gradient(circle, var(--puro) 0%, transparent 70%); }
+  .dragon-card.lendario::before { background: radial-gradient(circle, var(--lendario) 0%, transparent 70%); }
+  .dragon-card.divino::before { background: radial-gradient(circle, var(--divino) 0%, transparent 70%); }
+  .dragon-card.primal::before { background: radial-gradient(circle, var(--primal) 0%, transparent 70%); }
+  .dragon-card.caos::before { background: radial-gradient(circle, var(--caos) 0%, transparent 70%); }
+  .dragon-card.magia::before { background: radial-gradient(circle, var(--magia) 0%, transparent 70%); }
+  .dragon-card.tempo::before { background: radial-gradient(circle, var(--tempo) 0%, transparent 70%); }
+  .dragon-card.maravilha::before { background: radial-gradient(circle, var(--maravilha) 0%, transparent 70%); }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes glow {
+    from { text-shadow: 0 0 5px var(--accent); }
+    to { text-shadow: 0 0 20px var(--accent), 0 0 30px var(--accent); }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes flicker {
+    0% { opacity: 0.6; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.1); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes grow {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.3); opacity: 0.9; }
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 10px;
+    color: #aaa;
+    animation: fadeIn 1s ease;
+  }
