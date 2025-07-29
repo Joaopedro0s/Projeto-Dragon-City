@@ -22,7 +22,7 @@ export default class App extends Component {
       return;
     }
 
-    fetch('http://SEU_IP_OU_DOMINIO:3000/dragao', {
+    fetch('http://localhost:3000/dragao', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nome, tipo, habitat, nivel: parseInt(nivel) || 0, raridade, imagem_url }),
