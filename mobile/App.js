@@ -67,7 +67,7 @@ class App extends Component {
             <Text style={styles.label}>Nome do Dragão</Text>
             <TextInput
               style={styles.input}
-              placeholder="Ex: Flamejante"
+              placeholder="Ex: Dragão de Terra"
               placeholderTextColor="#aaa"
               value={this.state.nome}
               onChangeText={text => this.setState({ nome: text })}
@@ -100,7 +100,7 @@ class App extends Component {
             <Text style={styles.label}>Nível de Poder</Text>
             <TextInput
               style={styles.input}
-              placeholder="1-100"
+              placeholder="1-70"
               placeholderTextColor="#aaa"
               keyboardType="numeric"
               value={this.state.nivel}
@@ -166,6 +166,7 @@ const styles = StyleSheet.create({
     textShadowColor: '#ff6600',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,
+    marginTop: -70,
   },
   subtitle: {
     fontSize: 16,

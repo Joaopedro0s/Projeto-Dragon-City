@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1a1a2e;
+  color: #fff;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.dragon-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px #ff6600;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.card {
+  background-color: #2d2d4a;
+  border: 2px solid #ff6600;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+  color: #fff;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #ffcc00;
+}
+
+.card h2 {
+  font-size: 22px;
+  color: #ffcc00;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: #ddd;
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}

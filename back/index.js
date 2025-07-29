@@ -32,6 +32,18 @@ app.post('/dragao', (req, res) => {
   });
 });
 
+// Rota para buscar todos os dragões
+app.get('/dragoes', (req, res) => {
+  const sql = 'SELECT * FROM dragoes ORDER BY nome ASC';
+  db.query(sql, (err, results) => {
+    if (err) {
+      console.error('Erro ao buscar dragões:', err);
+      return res.status(500).json({ error: 'Erro ao buscar dragões.' });
+    }
+    res.json(results);
+  });
+});
+
 // Inicia o servidor
 const PORT = 3000;
 app.listen(PORT, () => {
