@@ -1,6 +1,6 @@
-create table dragoes
+create database dragoncity;
 
-use dragoes
+use dragoncity;
 
 CREATE TABLE dragoes (
   id INT PRIMARY KEY AUTO_INCREMENT,
